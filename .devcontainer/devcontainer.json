@@ -1,0 +1,32 @@
+{
+    "name": "quarkus",
+
+    "build": {
+      "dockerfile": "Containerfile"
+    },
+
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "installMaven": true,
+            "mavenVersion": "3.9.9", 
+            "jdkDistro": "tem",
+            "version": "21"
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic"
+			},
+            "extensions": [
+                "redhat.java",
+                "vscjava.vscode-java-dependency",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-java-pack"
+            ]
+        }
+  },
+
+  "postStartCommand": "./.devcontainer/scripts/postStartCommand.sh"
+}
